@@ -1,0 +1,60 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="ListaPhoneApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True" Loaded="PhoneApplicationPage_Loaded" d:DesignHeight="768" d:DesignWidth="480">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Margin="12,17,112,28">
+            <TextBlock x:Name="ApplicationTitle" Text="LISTA DE COMPRAS - By ReyLeal Ltda." Style="{StaticResource PhoneTextNormalStyle}" Width="372" Foreground="#FFFFC031"/>
+        </StackPanel>
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="578*" />
+                <RowDefinition Height="118*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*" />
+                <ColumnDefinition Width="406*" />
+            </Grid.ColumnDefinitions>
+
+            <Button Content="▼ Novo" Height="72" HorizontalAlignment="Left" Margin="190,-12,0,0" Name="btnNovoProduto" VerticalAlignment="Top" Width="228" VerticalContentAlignment="Center" Click="btnNovoProduto_Click" Grid.Column="1" BorderBrush="#FFFFC031" Foreground="#FFFFC031"/>
+
+            <TextBlock Grid.ColumnSpan="2" Height="32" Margin="0,16,237,0" Name="textBlock4" Text="Produtos Cadastrados" VerticalAlignment="Top" Foreground="#FFFFC031" />
+            <ListBox BorderBrush="#FFFFC031" BorderThickness="3" Grid.ColumnSpan="2" Margin="-2,55,0,416" Name="lstCadastrados" />
+
+            <TextBlock Height="29" HorizontalAlignment="Left" Margin="210,175,0,0" Name="textBlock1" Text="Quantidade" VerticalAlignment="Top" Width="130" Foreground="#FFFFC031" Grid.Column="1" />
+            <TextBox Grid.Column="1" Height="72" HorizontalAlignment="Left" Margin="331,154,0,0" Name="txtQuantidade" Text="1" VerticalAlignment="Top" Width="87" Background="#FF414141" BorderBrush="#FFFFC031" Foreground="#FFFFC031"/>
+
+            <Button Content="▼ Pendente" Height="72" Name="btnPendente" VerticalAlignment="Top" Width="219" Margin="-12,203,0,0" Grid.ColumnSpan="2" Click="btnPendente_Click" BorderBrush="#FF34FF34" HorizontalAlignment="Left" Foreground="#FF34FF34"/>
+            <Button Content="▲ Remover" Height="72" Name="btnRemover" VerticalAlignment="Top" Width="228" Margin="190,203,-12,0" Grid.Column="1" Click="btnRemover_Click" BorderBrush="#FFC44141" Foreground="#FFC44141" />
+
+            <TextBlock Height="30" Name="textBlock2" Text="Pendentes" VerticalAlignment="Top" Margin="0,276,66,0" Grid.ColumnSpan="2" Foreground="#FF34FF34" />
+            <ListBox Height="138" Name="lstPendente" VerticalAlignment="Top" Margin="0,312,0,0" Grid.ColumnSpan="2" BorderThickness="3" BorderBrush="#FF34FF34"></ListBox>
+
+            <Button Content="▼ Comprar" Height="72" Name="btnComprar" VerticalAlignment="Top" Margin="-12,456,0,0" Grid.ColumnSpan="2" Click="btnComprar_Click" BorderBrush="#FF005FF8" HorizontalAlignment="Left" Width="231" Foreground="#FF005FF8"/>
+            <Button Content="▲ Desfazer" Height="72" Name="btnDesfazer" VerticalAlignment="Top" Margin="190,456,-12,0" Grid.Column="1" Click="btnDesfazer_Click" BorderBrush="#FFFFFF27" Foreground="#FFFFFF27" />
+
+            <TextBlock Height="30" Name="textBlock3" Text="Comprados" VerticalAlignment="Top" Margin="6,518,44,0" Grid.ColumnSpan="2" Foreground="#FF005FF8"/>
+            <ListBox Name="lstComprado" Margin="0,554,0,6" Grid.ColumnSpan="2" BorderBrush="#FF005FF8" BorderThickness="3" Grid.RowSpan="2" />
+            
+        </Grid>        
+    </Grid>
+
+</phone:PhoneApplicationPage>
